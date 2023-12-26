@@ -52,8 +52,14 @@ function Solver({ piecesDrawerOpen = false, closeDrawerHandler = () => {} }) {
             setSolving(false);
           }, [1000]);
         }}
-        changeDayHandler={(e) => setDay(e.target.value)}
-        changeMonthHandler={(e) => setMonth(e.target.value)}
+        changeDayHandler={(e) => {
+          setSolved(false);
+          setDay(e.target.value);
+        }}
+        changeMonthHandler={(e) => {
+          setSolved(false);
+          setMonth(e.target.value);
+        }}
       />
       <div className="board-container" id="solver">
         <Board board={boardMatrix} />
