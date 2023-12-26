@@ -11,8 +11,6 @@ class Board:
         self.month = self._get_board_index_of_month(date_object.month)
         self.attempted_states = 0
         self.grid_size = (7, 7)
-        # represent pieces
-        self.navigator = (0, 0)
         self.board = [
             [1, 1, 1, 1, 1, 1, 0],
             [1, 1, 1, 1, 1, 1, 0],

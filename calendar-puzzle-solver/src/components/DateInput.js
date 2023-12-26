@@ -15,7 +15,7 @@ const DateInput = ({
 }) => {
   return (
     <div className="date-input">
-      <h1>Select a month and day to solve the calendar puzzle!</h1>
+      <h2>Select a month and day to solve the calendar puzzle!</h2>
 
       <FormControl sx={{ marginRight: "1rem" }}>
         <InputLabel id="month-select-label">Month</InputLabel>

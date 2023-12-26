@@ -15,11 +15,27 @@
 
 
 .piece-cell {
-    padding: 1rem;
     margin: 0;
     height: 50px;
     width: 50px;
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
 }
+
+.piece-cell.placed {
+    margin: 0;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
 
 /* use flexbox to display a 7 x 7 grid */
 
@@ -42,13 +58,121 @@
 }
 
 .board .board-cell {
-    padding: 1rem;
     margin: 0;
-    height: 50px;
+    position: relative;
+    height: 75px;
     display: inline-block;
-    width: 50px;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .board .board-cell.active {
     background-color: rgb(253, 223, 204)
 }
+
+
+/* loading screen */
+#loading-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    left: 0;
+    top: 0;
+}
+
+#loading-content {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 120px;
+    height: 120px;
+    margin: -60px 0 0 -60px;
+    border: 5px solid var(--color-cyan-primary);
+}
+
+#loading-content:after {
+    content: "";
+    position: absolute;
+    border: 5px solid var(--color-orange-primary);
+    left: 15px;
+    right: 15px;
+    top: 15px;
+    bottom: 15px;
+}
+
+#loading-content:before {
+    content: "";
+    position: absolute;
+    border: 10px solid var(--color-cyan-primary);
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+}
+
+#loading-content {
+    border: 10px solid transparent;
+    border-top-color: var(--color-blue-primary);
+    border-bottom-color: var(--color-blue-primary);
+    border-radius: 50%;
+    -webkit-animation: loader 2s linear infinite;
+    -moz-animation: loader 2s linear infinite;
+    -o-animation: loader 2s linear infinite;
+    animation: loader 2s linear infinite;
+}
+
+#loading-content:before {
+    border: 5px solid transparent;
+    border-top-color: var(--color-orange-primary);
+    border-bottom-color: var(--color-orange-primary);
+    border-radius: 50%;
+    -webkit-animation: loader 3s linear infinite;
+    -moz-animation: loader 2s linear infinite;
+    -o-animation: loader 2s linear infinite;
+    animation: loader 3s linear infinite;
+}
+
+#loading-content:after {
+    border: 7px solid transparent;
+    border-top-color: var(--color-blue-tertiary);
+    border-bottom-color: var(--color-blue-tertiary);
+    border-radius: 50%;
+    -webkit-animation: loader 1.5s linear infinite;
+    animation: loader 1.5s linear infinite;
+    -moz-animation: loader 2s linear infinite;
+    -o-animation: loader 2s linear infinite;
+}
+
+@-webkit-keyframes loaders {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* end loading screen */
