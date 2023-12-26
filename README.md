@@ -37,7 +37,11 @@ Following the completion of that Python program, I got a little obsessed with "R
 
 A video is included below of the app in action!
 
-![demo video of calendar puzzle solver](puzzlesolver.mov)
+ 
+
+https://github.com/austinjhunt/calendar-puzzle-solver/assets/31296526/3bac36cc-987b-4a2c-8ec4-8c70fcddd5f7
+
+
 
 It's not hosted anywhere but you can run it locally:
 
