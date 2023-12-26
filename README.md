@@ -37,7 +37,7 @@ Following the completion of that Python program, I got a little obsessed with "R
 
 A video is included below of the app in action!
 
-![demo video of calendar puzzle solver](puzzlesolver.mov)
+![demo video of calendar puzzle solver](puzzlesolver.mp4)
 
 It's not hosted anywhere but you can run it locally:
 
