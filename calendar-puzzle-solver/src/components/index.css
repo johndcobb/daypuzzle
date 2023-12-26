@@ -1,0 +1,54 @@
+.date-input {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.pieces-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 2rem auto;
+}
+
+
+.piece-cell {
+    padding: 1rem;
+    margin: 0;
+    height: 50px;
+    width: 50px;
+}
+
+/* use flexbox to display a 7 x 7 grid */
+
+.board-container {
+    padding: 1rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+.board {
+    height: 100%;
+    width: 100%;
+}
+
+.board .board-cell {
+    padding: 1rem;
+    margin: 0;
+    height: 50px;
+    display: inline-block;
+    width: 50px;
+}
+
+.board .board-cell.active {
+    background-color: rgb(253, 223, 204)
+}

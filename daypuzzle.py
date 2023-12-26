@@ -33,9 +33,6 @@ class Board:
         x_place, y_place = placement
         for x in range(piece_width):
             for y in range(piece_height):
-                # If there is a current piece in the orientation doesnt fit on the board....
-
-                # print(f'x: {x}, y: {y}, x_place: {x_place}, y_place: {y_place}')
                 if orientation[x][y] == 1 and self.board[x_place + x][y_place + y] != 1:
                     return False
         return True
@@ -170,10 +167,10 @@ class Board:
 
 class Piece:
     def __init__(self, piece, name=None):
+        self.name = name
         self._generate_orientations(
             piece
         )  # generate all orientations into self.orientations
-        self.name = name
 
     def _generate_orientations(self, piece):
         self.orientations = []
@@ -192,6 +189,7 @@ class Piece:
             ):
                 unique.append(matrix)
         self.orientations = [np.array(matrix) for matrix in unique]
+        # pretty print self.orientations - list of matrices
 
     def __str__(self):
         return str(self.orientations)
