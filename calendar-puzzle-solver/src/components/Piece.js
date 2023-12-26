@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Orientation from "./Orientation";
-const Piece = ({ name = null, orientationIndex = 0, orientations = [] }) => {
-  const [activeOrientation, setActiveOrientation] = useState(orientationIndex);
+const Piece = ({ name = null, orientations = [] }) => {
+  const [activeOrientation, setActiveOrientation] = useState(0);
   const [color, setColor] = useState("yellow");
   useEffect(() => {
     // use name to set color
@@ -16,7 +16,8 @@ const Piece = ({ name = null, orientationIndex = 0, orientations = [] }) => {
       L2: "gray",
     };
     setColor(colorMap[name] || "yellow");
-  }, [0]);
+    setActiveOrientation(0);
+  }, []);
 
   if (orientations) {
     return (
@@ -25,7 +26,6 @@ const Piece = ({ name = null, orientationIndex = 0, orientations = [] }) => {
           return (
             <Orientation
               key={`orientation-${i}`}
-              color={color}
               name={name}
               active={i === activeOrientation}
               orientation={orientation}

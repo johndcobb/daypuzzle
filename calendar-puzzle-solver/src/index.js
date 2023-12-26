@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import App from "./App";
 import Solver from "./components/Solver";
+import ResponsiveAppBar from "./components/AppBar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Solver />
+    <App></App>
   </React.StrictMode>
 );
 

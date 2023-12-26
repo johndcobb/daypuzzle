@@ -1,17 +1,22 @@
 import React from "react";
-const PieceCell = ({ cell, color, name }) => {
-  if (cell === 1) {
+const PieceCell = ({ cell, name, placed = false }) => {
+  const colorMap = {
+    Z: "red",
+    O: "blue",
+    X: "green",
+    U: "purple",
+    P: "orange",
+    S: "pink",
+    T: "brown",
+    L2: "gray",
+  };
+  const color = colorMap[name] || "yellow";
+  if (cell != 0) {
     return (
       <div
+        className={placed ? "piece-cell placed" : "piece-cell"}
         style={{
           backgroundColor: color,
-          padding: "1rem",
-          margin: "0",
-          display: "inline-block",
-          height: "50px",
-          width: "50px",
-          textAlign: "center",
-          verticalAlign: "middle",
         }}
       >
         {name}
@@ -20,15 +25,9 @@ const PieceCell = ({ cell, color, name }) => {
   } else {
     return (
       <div
+        className="piece-cell"
         style={{
           backgroundColor: "white",
-          padding: "1rem",
-          margin: "0",
-          display: "inline-block",
-          height: "50px",
-          width: "50px",
-          textAlign: "center",
-          verticalAlign: "middle",
         }}
       ></div>
     );
